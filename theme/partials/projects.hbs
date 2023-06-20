@@ -1,75 +1,77 @@
 {{#if resume.projects.length}}
 <section class="section">
   <header>
-    <h2 class='section-title'>Projects <span class="item-count">({{resume.projects.length}})</span></h2>
+    <h2 class='section-title'>Hobby Projects <span class="item-count">({{resume.projects.length}})</span></h2>
   </header>
   <section id="projects">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; row-gap: 20px;">
     {{#each resume.projects}}
     <section class="project-item">
-      {{#if summary}}
-        <label for="project-item-{{@index}}"></label>
-      {{/if}}
-
-      {{#if name}}
-      <header class="clear">
-        {{#if name}}
-        <div class="position">{{name}}</div>
-        {{/if}}
-        {{#if startDate}}
-        <div class="date">
-          <span class="startDate">{{MY startDate}}</span>
-          {{#if endDate}}
-          <span class="endDate">- {{MY endDate}}</span>
-          {{else}}
-          <span class="endDate">- Current</span>
+          {{#if summary}}
+            <label for="project-item-{{@index}}"></label>
           {{/if}}
-        </div>
-        {{/if}}
-      </header>
-      {{/if}}
-      {{#location}}
-      <span class="location">
-      <span class="fas fa-map-marker-alt"></span>
-      {{#if city}}
-      <span class="city">{{city}},</span>
-      {{/if}}
-      {{#if countryCode}}
-      <span class="countryCode">({{countryCode}})</span>
-      {{/if}}
-      {{#if region}}
-      <span class="region">
-      {{region}}
-      </span>
-      {{/if}}
-      </span>
-      {{/location}}
-      {{#if url}}
-      <span class="website">
-        <span class="fas fa-external-link-alt"></span>
-        <a target="_blank" href="{{url}}">{{url}}</a>
-      </span>
-      {{/if}}
-      {{#if keywords.length}}
-      <ul class="keywords">
-        {{#each keywords}}
-          <li>{{.}}</li>
-        {{/each}}
-      </ul>
-      {{/if}}
-      <div class="item">
-        {{#if summary}}
-          <div class="summary">{{paragraphSplit summary}}</div>
-        {{/if}}
-        {{#if highlights.length}}
-        <ul class="highlights">
-          {{#each highlights}}
-            <li>{{paragraphSplit .}}</li>
-          {{/each}}
-        </ul>
-        {{/if}}
-      </div>
-    </section>
+
+          {{#if name}}
+          <header class="clear">
+            {{#if name}}
+            <div class="position">{{name}}</div>
+            {{/if}}
+            {{#if startDate}}
+            <div class="date">
+              <span class="startDate">{{MY startDate}}</span>
+              {{#if endDate}}
+              <span class="endDate">- {{MY endDate}}</span>
+              {{else}}
+              <span class="endDate">- Current</span>
+              {{/if}}
+            </div>
+            {{/if}}
+          </header>
+          {{/if}}
+          {{#location}}
+          <span class="location">
+          <span class="fas fa-map-marker-alt"></span>
+          {{#if city}}
+          <span class="city">{{city}},</span>
+          {{/if}}
+          {{#if countryCode}}
+          <span class="countryCode">({{countryCode}})</span>
+          {{/if}}
+          {{#if region}}
+          <span class="region">
+          {{region}}
+          </span>
+          {{/if}}
+          </span>
+          {{/location}}
+          {{#if url}}
+          <span class="website">
+            <span class="fas fa-external-link-alt"></span>
+            <a target="_blank" href="{{url}}">{{url}}</a>
+          </span>
+          {{/if}}
+          {{#if keywords.length}}
+          <ul class="keywords">
+            {{#each keywords}}
+              <li>{{.}}</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+          <div class="item">
+            {{#if summary}}
+              <div class="summary">{{paragraphSplit summary}}</div>
+            {{/if}}
+            {{#if highlights.length}}
+            <ul class="highlights">
+              {{#each highlights}}
+                <li>{{paragraphSplit .}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </div>
+        </section>
     {{/each}}
+    </div>
   </section>
 </section>
 {{/if}}
